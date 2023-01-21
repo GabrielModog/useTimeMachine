@@ -11,7 +11,8 @@
 		"build": "rimraf ./build && tsc",
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier . --write",
-		"publish": "lint && npm publish --access public"
+		"publish": "lint && npm publish --access public",
+		"prepare": "husky install"
 	},
 	"dependencies": {},
 	"devDependencies": {
@@ -25,9 +26,15 @@
 		"eslint-plugin-n": "^15.0.0",
 		"eslint-plugin-promise": "^6.0.0",
 		"eslint-plugin-react": "^7.32.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.0",
 		"prettier": "2.8.3",
 		"react": "^18.2.0",
 		"rimraf": "^4.1.1",
 		"typescript": "*"
+	},
+	"lint-staged": {
+		"*.ts": "eslint --cache --fix",
+		"*.--write": "prettier --write"
 	}
 }
