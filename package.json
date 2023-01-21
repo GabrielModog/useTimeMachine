@@ -1,20 +1,31 @@
 {
-  "name": "use-time-machine",
-  "version": "1.0.0",
-  "description": "A simple undo/redo hook",
-  "main": "index.js",
-  "repository": "https://github.com/GabrielModog/useTimeMachine.git",
-  "author": "GabrielModog <criativo.modog@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "build": "rimraf ./build && tsc"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@types/react": "^18.0.27",
-    "react": "^18.2.0",
-    "rimraf": "^4.1.1",
-    "typescript": "^4.9.4"
-  }
+	"name": "use-time-machine",
+	"version": "1.0.0",
+	"description": "A simple undo/redo hook",
+	"main": "index.js",
+	"repository": "https://github.com/GabrielModog/useTimeMachine.git",
+	"author": "GabrielModog <criativo.modog@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"build": "rimraf ./build && tsc",
+		"lint": "eslint . --fix --max-warnings=0",
+		"format": "prettier . --write"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@types/node": "^18.11.18",
+		"@types/react": "^18.0.27",
+		"@typescript-eslint/eslint-plugin": "^5.0.0",
+		"eslint": "^8.0.1",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-config-standard-with-typescript": "^31.0.0",
+		"eslint-plugin-import": "^2.25.2",
+		"eslint-plugin-n": "^15.0.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"eslint-plugin-react": "^7.32.1",
+		"prettier": "2.8.3",
+		"react": "^18.2.0",
+		"rimraf": "^4.1.1",
+		"typescript": "*"
+	}
 }

@@ -1,10 +1,10 @@
 export interface TimeMachineState<T> {
-  past: Array<any>;
-  present: Array<any>;
-  future: Array<any>;
+	past: Array<T | any>;
+	present: Array<T | any>;
+	future: Array<T | any>;
 }
 
 export type TimeMachineActions =
-  | { type: "RESET" }
-  | { type: "BACKWARD" }
-  | { type: "FORWARD" };
+	| { type: 'RESET' }
+	| { type: 'BACKWARD' }
+	| { type: 'FORWARD' };
