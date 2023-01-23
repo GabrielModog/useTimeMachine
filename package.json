@@ -1,6 +1,6 @@
 {
 	"name": "use-time-machine",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "A simple undo/redo state hook",
 	"main": "build/index.js",
 	"repository": {
@@ -16,7 +16,7 @@
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier . --write",
 		"build": "rimraf ./build && yarn lint && tsc",
-		"publish": "lint && npm publish --access public",
+		"publish:npm": "npm publish --access public",
 		"prepare": "husky install"
 	},
 	"dependencies": {},
