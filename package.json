@@ -1,16 +1,21 @@
 {
 	"name": "use-time-machine",
 	"version": "1.0.0",
-	"description": "A simple undo/redo hook",
-	"main": "./build/index.js",
-	"type": "module",
-	"repository": "https://github.com/GabrielModog/useTimeMachine.git",
+	"description": "A simple undo/redo state hook",
+	"main": "build/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/GabrielModog/useTimeMachine.git"
+	},
 	"author": "GabrielModog <criativo.modog@gmail.com>",
 	"license": "MIT",
+	"files": [
+		"dist"
+	],
 	"scripts": {
-		"build": "rimraf ./build && tsc",
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier . --write",
+		"build": "rimraf ./build && yarn lint && tsc",
 		"publish": "lint && npm publish --access public",
 		"prepare": "husky install"
 	},

@@ -3,13 +3,18 @@
 		"target": "es5",
 		"module": "commonjs",
 		"lib": ["es6"],
-		"allowJs": true,
 		"outDir": "build",
 		"rootDir": "src",
+		"declarationDir": "build/types",
+		"moduleResolution": "node",
+		"allowJs": true,
 		"strict": true,
+		"sourceMap": true,
+		"declaration": true,
 		"noImplicitAny": true,
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"allowSyntheticDefaultImports": true
 	}
 }
