@@ -4,6 +4,18 @@ A simple React.js hook to go forward and backwards with your state.
 
 <hr>
 
+## Install now
+
+```
+  yarn add use-time-machine
+```
+
+or
+
+```
+  npm i use-time-machine
+```
+
 #### Sample
 
 ```jsx
