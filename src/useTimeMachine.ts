@@ -44,5 +44,5 @@ export function useTimeMachine<T>(initialState: T[]) {
 	const hasPast = !(history.past.length === 0);
 	const hasFuture = !(history.future.length === 0);
 
-	return [history, sendTo, hasPast, hasFuture];
+	return { history, sendTo, hasPast, hasFuture };
 }

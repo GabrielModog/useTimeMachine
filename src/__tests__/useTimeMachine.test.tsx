@@ -1,10 +1,21 @@
-import { renderHook } from '@testing-library/react-hooks/native';
+import { act, renderHook } from '@testing-library/react-hooks/native';
 import { useTimeMachine } from '../useTimeMachine';
 
-test('Must return present value as "Mock"', () => {
-	const initialState = ['Mock'];
-	const { result } = renderHook(() => useTimeMachine(initialState));
-	const state = result.current[0];
+const INITIAL_VALUE = ['Mock'];
 
-	expect(state.present).toBe(initialState);
+test('Must return present value as "Mock"', () => {
+	const { result } = renderHook(() => useTimeMachine(INITIAL_VALUE));
+	const state = result.current.history.present;
+
+	expect(state).toBe(INITIAL_VALUE);
+});
+
+test('Must return backward present value', () => {
+	const { result } = renderHook(() => useTimeMachine(INITIAL_VALUE));
+
+	act(() => {
+		result.current.sendTo('BACKWARD');
+	});
+
+	expect(result.current.history.past).toBe(INITIAL_VALUE);
 });
