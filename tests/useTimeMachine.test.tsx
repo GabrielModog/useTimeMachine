@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks/native';
-import { useTimeMachine } from '../useTimeMachine';
+import { useTimeMachine } from '../src/useTimeMachine';
 
 const INITIAL_VALUE = 'Mock';
 

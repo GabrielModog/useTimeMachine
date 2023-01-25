@@ -14,6 +14,6 @@ module.exports = {
 	ignorePatterns: ['/build/**/*.js'],
 	rules: {
 		'@typescript-eslint/explicit-function-return-type': 'off',
-		'@typescript-eslint/strict-boolean-expressions': 'warn',
+		'@typescript-eslint/strict-boolean-expressions': 'off',
 	},
 };
