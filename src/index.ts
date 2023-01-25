@@ -1,1 +1,1 @@
-export * from './useTimeMachine';
+export { useTimeMachine } from './useTimeMachine';

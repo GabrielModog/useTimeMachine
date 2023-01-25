@@ -18,6 +18,7 @@
 		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true
 	},
-	"exclude": ["node_modules", "build", "src/_tests_/*.test.tsx"],
+	"files": ["src/index.ts"],
+	"exclude": ["node_modules", "build", "src/__tests__/*.test.tsx"],
 	"include": ["src/**/*"]
 }
