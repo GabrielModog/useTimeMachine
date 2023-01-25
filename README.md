@@ -22,7 +22,7 @@ or
  import { useTimeMachine } from "use-time-machine"
 
   function App(){
-    const [currentState, sendTo, hasPast, hasFuture] = useTimeMachine([...]);
+    const [history, sendTo, hasPast, hasFuture] = useTimeMachine([...]);
 
     return <div>...</div>
   }
