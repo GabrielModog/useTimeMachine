@@ -7,8 +7,6 @@ import { terser } from 'rollup-plugin-terser';
 
 const packageJson = require('./package.json');
 
-console.log(typeof dts);
-
 export default [
 	{
 		input: 'src/index.ts',
