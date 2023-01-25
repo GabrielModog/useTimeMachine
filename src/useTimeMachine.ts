@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import { TimeMachineActions, TimeMachineState, TimeStepsParam } from './types';
 
-export function useTimeMachine<T>(initialState: T) {
+export function useTimeMachine<T>(initialState: T[]) {
 	const defaultState: TimeMachineState<T> = {
 		past: [],
 		present: initialState,
@@ -53,12 +53,12 @@ export function useTimeMachine<T>(initialState: T) {
 	const hasPast = !(history.past.length === 0);
 	const hasFuture = !(history.future.length === 0);
 
-	function sendTo<T>(where: TimeStepsParam, value?: T) {
-		dispatch({ type: where, payload: value });
+	function sendTo<T>(where: TimeStepsParam, value?: T[]) {
+		dispatch({ type: where, payload: value ?? [] });
 	}
 
-	function addToPresentState<T>(value?: T) {
-		dispatch({ type: 'PRESENT', payload: value });
+	function addToPresentState<T>(value?: T[]) {
+		dispatch({ type: 'PRESENT', payload: value ?? [] });
 	}
 
 	function resetHistory() {

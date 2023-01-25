@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks/native';
 import { useTimeMachine } from '../src/useTimeMachine';
 
-const INITIAL_VALUE = 'Mock';
+const INITIAL_VALUE = ['Mock'];
 
 describe('Prime cases test suite', () => {
 	test('Must return present value as "Mock"', () => {
@@ -12,13 +12,13 @@ describe('Prime cases test suite', () => {
 	});
 
 	test('Must add a state to present', () => {
-		const { result } = renderHook(() => useTimeMachine(0));
+		const { result } = renderHook(() => useTimeMachine([0]));
 
 		act(() => {
-			result.current.sendTo('PRESENT', 4);
+			result.current.sendTo('PRESENT', [4]);
 		});
 
-		expect(result.current.history.present).toBe(4);
+		expect(result.current.history.present).toStrictEqual([4]);
 	});
 
 	test('Must return future value when backwards', () => {
@@ -32,7 +32,7 @@ describe('Prime cases test suite', () => {
 	});
 
 	test('Must return past value when forwards', () => {
-		const MOCK = 'present';
+		const MOCK = ['present'];
 		const { result } = renderHook(() => useTimeMachine(MOCK));
 
 		act(() => {
@@ -43,7 +43,7 @@ describe('Prime cases test suite', () => {
 	});
 
 	test('Must return empty when reset state', () => {
-		const MOCK = 'present';
+		const MOCK = ['present'];
 		const { result } = renderHook(() => useTimeMachine(MOCK));
 
 		act(() => {
@@ -53,5 +53,19 @@ describe('Prime cases test suite', () => {
 		});
 
 		expect(result.current.history.present).toBe(MOCK);
+	});
+});
+
+describe('Real case test suite', () => {
+	test('Board tile history', () => {
+		const INTITIAL_BOARD_STATE = Array(9).fill(null);
+
+		const { result } = renderHook(() => useTimeMachine(INTITIAL_BOARD_STATE));
+
+		act(() => {
+			result.current.sendTo('BACKWARD');
+		});
+
+		expect(result.current.history.future).toStrictEqual([INTITIAL_BOARD_STATE]);
 	});
 });
