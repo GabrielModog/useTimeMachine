@@ -5,8 +5,8 @@
 		"module": "commonjs",
 		"lib": ["es6"],
 		"outDir": "build",
+		"declarationDir": "build",
 		"rootDir": "src",
-		"declarationDir": "build/types",
 		"moduleResolution": "node",
 		"allowJs": true,
 		"strict": true,
@@ -17,5 +17,7 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true
-	}
+	},
+	"exclude": ["node_modules", "build", "src/_tests_/*.test.tsx"],
+	"include": ["src/**/*"]
 }

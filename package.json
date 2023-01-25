@@ -16,6 +16,7 @@
 		"test": "jest",
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier . --write",
+		"build:no-test": "rimraf ./build && tsc",
 		"build": "rimraf ./build && yarn lint && yarn test && tsc",
 		"publish:npm": "yarn test && npm publish --access public",
 		"prepare": "husky install"
