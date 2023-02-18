@@ -11,7 +11,7 @@ module.exports = {
 		project: './tsconfig.json',
 	},
 	plugins: ['react'],
-	ignorePatterns: ['/build/**/*.js'],
+	ignorePatterns: ['/build/**/*.{js, ts, tsx}', '/dist/**/*.{js, ts, tsx}'],
 	rules: {
 		'@typescript-eslint/explicit-function-return-type': 'off',
 		'@typescript-eslint/strict-boolean-expressions': 'off',

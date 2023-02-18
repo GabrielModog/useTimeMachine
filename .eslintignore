@@ -1,4 +1,5 @@
 build
+dist
 babel.config.js
 babel.config.d.ts
 tests
