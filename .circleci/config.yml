@@ -3,7 +3,7 @@ version: 2
 refs:
   container: &container
     docker:
-      - image: node:lts
+      - image: circleci/node@5.1.0
     working_directory: ~/repo
   steps:
     - &Versions
