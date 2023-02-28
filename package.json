@@ -11,8 +11,7 @@
 	"author": "GabrielModog <criativo.modog@gmail.com>",
 	"license": "MIT",
 	"files": [
-		"dist/cjs/",
-		"dist/esm/"
+		"dist"
 	],
 	"type": "module",
 	"types": "dist/index.d.ts",
@@ -21,9 +20,7 @@
 		"test": "jest",
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier . --write",
-		"build:cjs": "tsc",
-		"build:es": "tsc -m esNext --outDir esm",
-		"build": "yarn build:cjs && yarn build:es",
+		"build": "rimraf ./dist && tsc",
 		"build:no-test": "rimraf ./build && tsc",
 		"build:old": "rimraf ./build && yarn lint && yarn test && tsc",
 		"prepare": "husky install"
@@ -76,5 +73,15 @@
 	"lint-staged": {
 		"*.ts": "eslint --cache --fix",
 		"*.--write": "prettier --write"
-	}
+	},
+	"keywords": [
+		"react",
+		"state",
+		"state management",
+		"utils",
+		"time machine",
+		"machine",
+		"hook",
+		"react hook"
+	]
 }
