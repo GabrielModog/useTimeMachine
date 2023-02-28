@@ -47,6 +47,7 @@ jobs:
       - *Test
   next:
     <<: *container
+    steps:
       - checkout
       - *Versions
       - *CacheRestore
@@ -64,6 +65,7 @@ jobs:
       - *Release
   main:
     <<: *container
+    steps:
       - checkout
       - *Versions
       - *CacheRestore
