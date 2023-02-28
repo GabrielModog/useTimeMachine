@@ -15,7 +15,6 @@ export default [
 				file: packageJson.main,
 				format: 'cjs',
 				sourcemap: true,
-				name: 'react-ts-lib',
 			},
 			{
 				file: packageJson.module,
@@ -24,11 +23,11 @@ export default [
 			},
 		],
 		plugins: [
+			resolve({ browser: false }),
 			external(),
-			resolve(),
+			terser(),
 			commonjs(),
 			typescript({ tsconfig: './tsconfig.json' }),
-			terser(),
 		],
 	},
 	{

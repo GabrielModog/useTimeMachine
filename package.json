@@ -4,7 +4,6 @@
 	"description": "A simple undo/redo state hook",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
-	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/GabrielModog/useTimeMachine.git"
@@ -14,6 +13,7 @@
 	"files": [
 		"dist"
 	],
+	"type": "module",
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"test": "jest",
@@ -22,7 +22,6 @@
 		"build": "rollup -c",
 		"build:no-test": "rimraf ./build && tsc",
 		"build:old": "rimraf ./build && yarn lint && yarn test && tsc",
-		"publish:npm": "yarn test && npm publish --access public",
 		"prepare": "husky install"
 	},
 	"dependencies": {},
