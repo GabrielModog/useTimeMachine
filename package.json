@@ -11,15 +11,19 @@
 	"author": "GabrielModog <criativo.modog@gmail.com>",
 	"license": "MIT",
 	"files": [
-		"dist"
+		"dist/cjs/",
+		"dist/esm/"
 	],
 	"type": "module",
 	"types": "dist/index.d.ts",
+	"typings": "dist/index.d.ts",
 	"scripts": {
 		"test": "jest",
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier . --write",
-		"build": "rollup -c",
+		"build:cjs": "tsc",
+		"build:es": "tsc -m esNext --outDir esm",
+		"build": "yarn build:cjs && yarn build:es",
 		"build:no-test": "rimraf ./build && tsc",
 		"build:old": "rimraf ./build && yarn lint && yarn test && tsc",
 		"prepare": "husky install"
