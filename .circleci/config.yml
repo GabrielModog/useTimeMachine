@@ -34,7 +34,7 @@ refs:
       run:
         key: dependency-cache-{{ checksum "yarn.lock" }}
         name: Release
-        command: yarn release
+        command: ls
 jobs:
   all:
     <<: *container
