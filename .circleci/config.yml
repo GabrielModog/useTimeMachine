@@ -32,6 +32,7 @@ refs:
         command: yarn test
     - &Release
       run:
+        key: dependency-cache-{{ checksum "yarn.lock" }}
         name: Release
         command: yarn release
 jobs:
