@@ -1,6 +1,6 @@
 {
 	"name": "use-time-machine",
-	"version": "0.0.0-development",
+	"version": "0.0.0",
 	"description": "A simple undo/redo state hook",
 	"main": "dist/index.js",
 	"module": "dist/index.js",
