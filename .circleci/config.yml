@@ -30,6 +30,10 @@ refs:
       run:
         name: Test
         command: yarn test
+    - &Versioning
+      run:
+        name: Versioning
+        command: npm version patch -m "version %s [skip ci]"
 jobs:
   all:
     <<: *container
@@ -83,10 +87,7 @@ jobs:
       - run:
           name: Add github.com to known hosts
           command: mkdir ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
-      - run:
-          name: Versioning
-          command: ls
-          #command: npm version patch -m "version %s [skip ci]"
+      - *Versioning
       - run:
           name: Push tag & changes to github.com
           command: git push
