@@ -79,19 +79,7 @@ jobs:
             git config --global user.name "GabrielModog"
             git remote rm origin
             git remote add origin https://${GITHUB_TOKEN}@github.com/GabrielModog/useTimeMachine
-  release:
-    <<: *container
-    steps:
-      - attach_workspace:
-          at: ~/repo
-      - *CacheRestore
-      - run:
-          name: Add github.com to known hosts
-          command: mkdir ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
       - *Versioning
-      - run:
-          name: Push tag & changes to github.com
-          command: git push
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
@@ -121,9 +109,6 @@ workflows:
     jobs:
       - main:
           context: common-env-vars
-      - release:
-          requires:
-            - main
           filters:
             branches:
               only: main
