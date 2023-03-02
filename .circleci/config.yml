@@ -30,11 +30,6 @@ refs:
       run:
         name: Test
         command: yarn test
-    - &Release
-      run:
-        key: dependency-cache-{{ checksum "yarn.lock" }}
-        name: Release
-        command: ls
 jobs:
   all:
     <<: *container
@@ -63,7 +58,6 @@ jobs:
             git config --global user.name "GabrielModog"
             git remote rm origin
             git remote add origin https://${GITHUB_TOKEN}@github.com/GabrielModog/useTimeMachine
-      - *Release
   main:
     <<: *container
     steps:
@@ -91,7 +85,8 @@ jobs:
           command: mkdir ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
       - run:
           name: Versioning
-          command: npm version patch -m "version %s [skip ci]"
+          command: ls
+          #command: npm version patch -m "version %s [skip ci]"
       - run:
           name: Push tag & changes to github.com
           command: git push
