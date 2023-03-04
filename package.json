@@ -3,6 +3,7 @@
 	"version": "0.0.0",
 	"description": "A simple undo/redo state hook",
 	"main": "lib/index.js",
+	"module": "esm/index.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/GabrielModog/useTimeMachine.git"
@@ -10,7 +11,8 @@
 	"author": "GabrielModog <criativo.modog@gmail.com>",
 	"license": "MIT",
 	"files": [
-		"dist"
+		"lib/",
+		"esm/"
 	],
 	"type": "module",
 	"types": "lib/index.d.ts",
@@ -19,8 +21,11 @@
 		"test": "jest",
 		"lint": "eslint . --fix --max-warnings=0",
 		"format": "prettier . --write",
-		"build": "rimraf ./dist && tsc",
-		"prepare": "husky install"
+		"build:cjs": "tsc",
+		"build:es": "tsc -m esNext --outDir esm",
+		"build": "yarn build:cjs && yarn build:es",
+		"prepare": "husky install",
+		"clean": "rimraf dist lib esm"
 	},
 	"dependencies": {},
 	"peerDependencies": {
