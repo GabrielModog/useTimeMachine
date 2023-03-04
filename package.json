@@ -2,8 +2,7 @@
 	"name": "use-time-machine",
 	"version": "0.0.0",
 	"description": "A simple undo/redo state hook",
-	"main": "dist/index.js",
-	"module": "dist/index.js",
+	"main": "lib/index.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/GabrielModog/useTimeMachine.git"
@@ -14,8 +13,8 @@
 		"dist"
 	],
 	"type": "module",
-	"types": "dist/index.d.ts",
-	"typings": "dist/index.d.ts",
+	"types": "lib/index.d.ts",
+	"typings": "lib/index.d.ts",
 	"scripts": {
 		"test": "jest",
 		"lint": "eslint . --fix --max-warnings=0",
