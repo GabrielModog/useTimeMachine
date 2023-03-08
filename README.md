@@ -39,8 +39,4 @@ function App() {
 }
 ```
 
-### Know Issues
-
-- will be needed to install `tslib` dependencie to work properly.
-
 <sub> by [@GabrielModog](https://twitter.com/gabrielmodog) - say hi! </sub>
