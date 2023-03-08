@@ -1,2 +1,2 @@
-export { useTimeMachine } from './useTimeMachine';
-export { useHistoryMachine } from './useHistoryMachine';
+export * from './useTimeMachine';
+export * from './useHistoryMachine';
