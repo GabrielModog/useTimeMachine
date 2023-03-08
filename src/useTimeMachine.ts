@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import { TimeMachineActions, TimeMachineState, TimeStepsParam } from './types';
 
-export function useTimeMachine<T>(initialState: T[]) {
+export default function useTimeMachine<T>(initialState: T[]) {
 	const defaultState: TimeMachineState<T> = {
 		past: [],
 		present: initialState,

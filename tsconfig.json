@@ -19,5 +19,6 @@
 		"lib": ["es2018", "dom"],
 		"importHelpers": true
 	},
+	"include": ["src"],
 	"exclude": ["dist", "lib", "esm", "node_modules", "types", "tests", "build"]
 }

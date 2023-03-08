@@ -29,7 +29,7 @@ function backwardState(state: HistoryMachineState) {
 	};
 }
 
-export function useHistoryMachine(initialState: any) {
+export default function useHistoryMachine(initialState: any) {
 	const defaultState: HistoryMachineState = {
 		current: initialState,
 		history: [],
